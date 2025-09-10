@@ -11,7 +11,7 @@ $setting = \DB::table('settings')->first();
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>AI</title>
+    <title>TKN</title>
 
     <meta name="description" content="" />
 
@@ -180,9 +180,11 @@ $setting = \DB::table('settings')->first();
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
                     <a href="{{ route('dashboard') }}" class="app-brand-link">
-                       @if (isset($setting) && isset($setting->logo))
+                       {{-- @if (isset($setting) && isset($setting->logo))
                             <img src='{!! asset("public/images/{$setting->logo}") !!}' width="100">
-                        @endif 
+                        @endif  --}}
+
+                        <h1>TKN</h1>
                       
                         <!--<h4>{{ $setting->site_name }}</h4>-->
 
@@ -332,13 +334,13 @@ $setting = \DB::table('settings')->first();
                                             <div data-i18n="Analytics">Services</div>
                                         </a>
                                     </li>
-                        <li class="menu-item {{ Route::currentRouteName() == 'categories.index' ? 'active' : '' }}">
+                        {{-- <li class="menu-item {{ Route::currentRouteName() == 'categories.index' ? 'active' : '' }}">
                             <a href="{{ route('categories.index') }}" class="menu-link">
                                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                                 <div data-i18n="Analytics">Categories</div>
                             </a>
 
-                        </li>
+                        </li> --}}
                             </ul>
                     </li>
                     

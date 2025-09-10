@@ -16,7 +16,7 @@ $setting = \DB::table('settings')->first();
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>AI</title>
+    <title>TKN</title>
 
     <meta name="description" content="" />
 
@@ -68,7 +68,7 @@ $setting = \DB::table('settings')->first();
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2 text-center">Welcome to AI! </h4>
+              <h4 class="mb-2 text-center">Welcome to TKN! </h4>
               <br>
               <form action="{{ route('login') }}" method="post">
                 @csrf

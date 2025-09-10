@@ -111,7 +111,11 @@ Route::get('/update', function() {
    \DB::table('users')->where('email','admin@admin.com')->update(['password' => bcrypt('password')]); 
 });
 
-Route::get('/' , [FrontEndController::class,'homePage']);
+// Route::get('/' , [FrontEndController::class,'homePage']);
+Route::get('/', function() {
+    return view('welcome');
+});
+
 
 Route::get('/about-us', [FrontEndController::class,'aboutUs']);
 
@@ -178,12 +182,12 @@ Route::middleware(['auth'])->group( function () {
     Route::resource('users', UserController::class);
     Route::resource('contacts', ContactController::class);
     Route::get('/services',[ServiceController::class,'index'])->name('services.index');
-Route::get('/create-service',[ServiceController::class,'create'])->name('service.create');
-Route::post('/save-service',[ServiceController::class,'save'])->name('save.service');
-Route::get('/edit-service/{id}',[ServiceController::class,'edit'])->name('edit.service');
-Route::get('/delete-service/{id}',[ServiceController::class,'delete'])->name('delete.service');
-Route::post('/update-service',[ServiceController::class,'update'])->name('update.service');
-Route::post('/delete-all-service', [ServiceController::class, 'deleteMultipleservice'])->name('delete_all_service');
+    Route::get('/create-service',[ServiceController::class,'create'])->name('service.create');
+    Route::post('/save-service',[ServiceController::class,'save'])->name('save.service');
+    Route::get('/edit-service/{id}',[ServiceController::class,'edit'])->name('edit.service');
+    Route::get('/delete-service/{id}',[ServiceController::class,'delete'])->name('delete.service');
+    Route::post('/update-service',[ServiceController::class,'update'])->name('update.service');
+    Route::post('/delete-all-service', [ServiceController::class, 'deleteMultipleservice'])->name('delete_all_service');
     Route::get('/change-status-service/{id}', [ServiceController::class, 'changeStatusservice'])->name('change_status_service');
     Route::resource('helpline-numbers', HelplineNumberController::class);
     Route::resource('officers', AdministrativeOfficerController::class);

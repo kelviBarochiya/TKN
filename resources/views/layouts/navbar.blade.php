@@ -14,9 +14,9 @@ $setting = \DB::table('settings')->first();
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
           <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
             <div class="avatar avatar-online">
-                @if (isset($setting) && isset($setting->logo))
-                        <img src="{{ asset('public/images/' . $setting->logo) }}" class="w-px-40 h-auto rounded-circle">
-                        @endif 
+                {{-- @if (isset($setting) && isset($setting->logo)) --}}
+                        <img src="{{ asset('public/images/team-1.jpg') }}" class="w-px-40 h-auto rounded-circle">
+                        {{-- @endif  --}}
             </div>
           </a>
           
@@ -26,10 +26,10 @@ $setting = \DB::table('settings')->first();
                 <div class="d-flex">
                   <div class="flex-shrink-0 me-3">
                     <div class="avatar avatar-online">
-                      <!--<img src="{!! asset('public/images/1731387527.jpg')!!}" alt class="w-px-40 h-auto rounded-circle" />-->
-                      @if (isset($setting) && isset($setting->logo))
+                        <img src="{{ asset('public/images/team-1.jpg') }}" class="w-px-40 h-auto rounded-circle">
+                      {{-- @if (isset($setting) && isset($setting->logo))
                             <img src='{!! asset("public/images/{$setting->logo}") !!}' class="w-px-40 h-auto rounded-circle">
-                        @endif 
+                        @endif  --}}
                     </div>
                   </div>
                   <div class="flex-grow-1">

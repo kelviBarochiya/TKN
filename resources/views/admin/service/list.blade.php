@@ -27,7 +27,7 @@
                 <th>SRNO</th>
                 <th>TITLE</th>
                 <!--<th>CONTENT</th>-->
-                <th>Parent</th>
+                {{-- <th>Parent</th> --}}
                 <th>IMAGE</th>
                 <th>STATUS</th>
                 <th>ACTION</th>
@@ -65,7 +65,7 @@
                         <td>{{ $count }}</td>
                         <td>{{ $item->title }}</td>
                         <!--<td>{!! html_entity_decode($content) !!}</td>-->
-                        <td>{{ $item->category ? $item->category->name : 'Root' }}</td>
+                        {{-- <td>{{ $item->category ? $item->category->name : 'Root' }}</td> --}}
                         <td>
                             @if($item->image != "")
                                 <img src="{!! asset("public/images/{$item->image}") !!}" height="50" width="50">
