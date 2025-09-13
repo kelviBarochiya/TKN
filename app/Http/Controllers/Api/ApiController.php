@@ -50,6 +50,7 @@ class ApiController extends Controller
     {
         $testimonials = DB::table('testimonials')->get()->map(function ($item) {
             return [
+                'id' => $item->id,
                 'name'        => $item->name,
                 'designation' => $item->designation,
                 'feedback_content' => $item->feedback_content,
@@ -66,6 +67,7 @@ class ApiController extends Controller
     {
         $ourTeams = DB::table('our_teams')->get()->map(function ($item) {
             return [
+                'id' => $item->id,
                 'name'        => $item->name,
                 'designation' => $item->designation,
                 'image'       => asset($item->image),
