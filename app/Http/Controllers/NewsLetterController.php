@@ -8,7 +8,7 @@ class NewsLetterController extends Controller
     public function index()
     {
        
-        $newsletter = DB::table('newsletter')->orderBy('id', 'desc')->get();
+        $newsletter = DB::table('newsletters')->orderBy('id', 'desc')->get();
         return view('admin.newsletter.list',compact('newsletter'));
     }
     public function export()
@@ -21,7 +21,7 @@ class NewsLetterController extends Controller
             <th>Email</th>
             <th>created at</th>
         </tr>";
-        $newsletter = DB::table('newsletter')->get();
+        $newsletter = DB::table('newsletters')->get();
         foreach($newsletter as $key => $value)
         {
             $html .= "
@@ -41,7 +41,7 @@ class NewsLetterController extends Controller
     
    public function delete($id)
     {
-        if(DB::table('newsletter')->where('id',$id)->delete()){
+        if(DB::table('newsletters')->where('id',$id)->delete()){
             return redirect()->route('newsletter.index')->with('success', 'NewsLetter  Deleted successfully!');
         }
 
@@ -51,7 +51,7 @@ class NewsLetterController extends Controller
     {
         $ids = $request->ids;
        
-        $deleteMultipleCategory = DB::table('newsletter')->whereIn('id', $ids)->delete();
+        $deleteMultipleCategory = DB::table('newsletters')->whereIn('id', $ids)->delete();
         if ($deleteMultipleCategory) {
             echo json_encode('success');
         }

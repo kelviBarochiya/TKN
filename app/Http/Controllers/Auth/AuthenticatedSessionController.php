@@ -39,14 +39,15 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         // Admin check karo
-       if (Auth::user()->is_admin == 1) {
-            return redirect()->route('dashboard');
-        } else {
-            Auth::logout();
-            return redirect()->route('login')->with('error', 'Only admins can access this area.');
-        }
-        return redirect()->route('login')->with('error', 'Only admins can access this area.');
-    }
+    //    if (Auth::user()->is_admin == 1) {
+    //         return redirect()->route('dashboard');
+    //     } else {
+    //         Auth::logout();
+    //         return redirect()->route('login')->with('error', 'Only admins can access this area.');
+    //     }
+    //     return redirect()->route('login')->with('error', 'Only admins can access this area.');
+return redirect()->route('dashboard');   
+}
 
 
     /**

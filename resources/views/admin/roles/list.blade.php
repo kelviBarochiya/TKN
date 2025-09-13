@@ -4,7 +4,7 @@
     <div class="content-wrapper">
         <div class="container-xxl flex-grow-1 container-p-y">
             <!-- Add New Role Button -->
-            @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 || \App\Helpers\CommonHelper::getPermission('Roles', 'create'))
+            @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 || getPermission('Roles', 'create'))
                 <a href="{{ route('roles.create') }}" class="btn btn-primary" style="display:block; float:right;">
                     <i class="fa fa-plus"></i> Add Role
                 </a>
@@ -21,8 +21,8 @@
                                 <th>No</th>
                                 <th>Role Name</th>
                                 @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 ||
-                                        \App\Helpers\CommonHelper::getPermission('Roles', 'edit') ||
-                                        \App\Helpers\CommonHelper::getPermission('Roles', 'delete'))
+                                        getPermission('Roles', 'edit') ||
+                                        getPermission('Roles', 'delete'))
                                     <th>Actions</th>
                                 @endif
                             </tr>
@@ -33,8 +33,8 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $role->name }}</td>
                                     @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 ||
-                                            \App\Helpers\CommonHelper::getPermission('Roles', 'edit') ||
-                                            \App\Helpers\CommonHelper::getPermission('Roles', 'delete'))
+                                            getPermission('Roles', 'edit') ||
+                                            getPermission('Roles', 'delete'))
                                         <td>
                                             <div class="dropdown">
                                                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
@@ -42,13 +42,13 @@
                                                     <i class="bx bx-dots-vertical-rounded"></i>
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 || \App\Helpers\CommonHelper::getPermission('Roles', 'edit'))
+                                                    @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 || getPermission('Roles', 'edit'))
                                                         <a class="dropdown-item"
                                                             href="{{ route('roles.edit', $role->id) }}">
                                                             <i class="bx bx-edit-alt me-1"></i> Edit
                                                         </a>
                                                     @endif
-                                                    @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 || \App\Helpers\CommonHelper::getPermission('Roles', 'delete'))
+                                                    @if (isset(auth()->user()->is_admin) && auth()->user()->is_admin == 1 || getPermission('Roles', 'delete'))
                                                         <form action="{{ route('roles.destroy', $role->id) }}"
                                                             method="POST" style="display:inline;">
                                                             @csrf

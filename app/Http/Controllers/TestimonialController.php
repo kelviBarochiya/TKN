@@ -22,10 +22,12 @@ class TestimonialController extends Controller
     public function save(Request $request)
     {
         $request->validate([
+            'title' => 'required',
             'name' => 'required',
-            
+            'designation' => 'required',
+            'feedback_content' => 'required',
             'description' => 'required',
-            // 'image' => 'required|image|mimes:jpeg,jpg,png,svg|max:2048|dimensions:min_width=200,min_height=200',
+            'image' => 'required|image|mimes:jpeg,jpg,png,svg',
             'status' => 'required'
         ]);
         $fileName = "";
