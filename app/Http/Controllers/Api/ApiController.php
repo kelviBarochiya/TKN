@@ -18,7 +18,7 @@ class ApiController extends Controller
                 'title' => $item->title,
                 'description' => $item->description,
                 'points' => $item->points ? json_decode($item->points, true) : [],
-                'images' => asset($item->image),
+                'images' => asset($item->images),
                 'created_at' => $item->created_at,
                 'updated_at' => $item->updated_at,
             ];
